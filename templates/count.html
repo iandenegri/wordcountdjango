@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Word Counts</title>
+  </head>
+  <body>
+    <h1>There are {{ count }} words in your text entry</h1>
+    <h2>Your text:</h2>
+    <p>{{ fulltext }}</p>
+    <h2>Here's a breakdown of your text and word use:</h2>
+    <p>
+      {% for word, counttotal in wordlist %}
+        {{ word }} : {{ counttotal }}
+        <br>
+      {% endfor %}
+    </p>
+    <footer>
+      <a href="{% url 'about' %}">About page!</a>
+    </footer>
+  </body>
+</html>
